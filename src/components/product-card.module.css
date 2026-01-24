@@ -1,0 +1,90 @@
+.card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(9, 18, 42, 0.08);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 55px rgba(15, 23, 42, 0.12);
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(9, 18, 42, 0.9);
+  color: #f8fafc;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.body {
+  padding: 20px 22px 24px;
+  display: grid;
+  gap: 12px;
+}
+
+.kicker {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #667085;
+}
+
+.description {
+  color: #475467;
+  line-height: 1.5;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.footer button {
+  border: none;
+  background: #0c1a3c;
+  color: #f8fafc;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.footer button:hover {
+  background: #1a2b5f;
+}
+
+@media (max-width: 640px) {
+  .card {
+    border-radius: 18px;
+  }
+}

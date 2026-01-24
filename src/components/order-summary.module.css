@@ -1,0 +1,39 @@
+.card {
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 20px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 20px;
+  display: grid;
+  gap: 16px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kicker {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #667085;
+}
+
+.total {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.list {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  color: #475467;
+}

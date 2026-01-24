@@ -1,0 +1,90 @@
+.hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  align-items: center;
+  padding: 40px;
+  border-radius: 32px;
+  background: linear-gradient(135deg, rgba(12, 26, 60, 0.94), rgba(10, 74, 98, 0.92));
+  color: #f8fafc;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(250, 204, 21, 0.35), transparent 55%);
+  pointer-events: none;
+}
+
+.copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 16px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #f8fafc;
+}
+
+.description {
+  color: rgba(248, 250, 252, 0.8);
+  max-width: 40ch;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.primary,
+.secondary {
+  border-radius: 999px;
+  padding: 12px 20px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary {
+  background: #facc15;
+  color: #1f2937;
+}
+
+.secondary {
+  background: rgba(248, 250, 252, 0.2);
+  color: #f8fafc;
+}
+
+.media {
+  position: relative;
+  z-index: 1;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 240px;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.35);
+}
+
+.media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 28px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
