@@ -1,4 +1,4 @@
-import type { ContentPage, Order, Product } from "@/lib/types";
+import type { ContentPage, Order, Product, Basket, Payment } from "@/lib/types";
 
 export const mockProducts: Product[] = [
   {
@@ -97,5 +97,31 @@ export const mockOrders: Order[] = [
     status: "processing",
     email: "studio@example.com",
     createdAt: new Date().toISOString(),
+  },
+];
+
+export const mockBaskets: Basket[] = [
+  {
+    id: "cart_2001",
+    items: [{ productId: "pr_atlas_jacket", quantity: 1, price: 265 }],
+    total: 265,
+    currency: "USD",
+    country: "US",
+    status: "active",
+    version: 1,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  },
+];
+
+export const mockPayments: Payment[] = [
+  {
+    id: "pay_3001",
+    amount: 265,
+    currency: "USD",
+    status: "pending",
+    orderId: "ord_1001",
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
   },
 ];

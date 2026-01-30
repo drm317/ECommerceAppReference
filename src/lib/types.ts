@@ -28,6 +28,38 @@ export type Order = {
   createdAt: string;
 };
 
+export type BasketItem = {
+  productId: string;
+  quantity: number;
+  price: number;
+};
+
+export type BasketStatus = "active" | "ordered";
+
+export type Basket = {
+  id: string;
+  items: BasketItem[];
+  total: number;
+  currency: string;
+  country: string;
+  status: BasketStatus;
+  version?: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type PaymentStatus = "pending" | "authorized" | "paid" | "failed";
+
+export type Payment = {
+  id: string;
+  amount: number;
+  currency: string;
+  status: PaymentStatus;
+  orderId?: string | null;
+  createdAt: string;
+  updatedAt: string;
+};
+
 export type ContentBlock = {
   id: string;
   type: "hero" | "feature" | "text" | "cta";

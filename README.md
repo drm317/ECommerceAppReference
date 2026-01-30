@@ -1,6 +1,6 @@
 # Surface & Co. E-commerce Example
 
-A sample e-commerce app built with Next.js (App Router), React, Storybook, and a GraphQL API powered by Yoga. The backend services include product, order, and content layers with Algolia + Contentful integrations. Development mode uses local mock data so external connections are optional.
+A sample e-commerce app built with Next.js (App Router), React, Storybook, and a GraphQL API powered by Yoga. The backend services include product, content, basket, order, and payment layers with Algolia + Contentful integrations plus optional CommerceTools. Development mode uses local mock data so external connections are optional.
 
 ## Features
 - Next.js storefront with custom UI components
@@ -8,7 +8,9 @@ A sample e-commerce app built with Next.js (App Router), React, Storybook, and a
 - GraphQL Yoga API at `/api/graphql`
 - Product service (Algolia search + fallback mock data)
 - Content service (Contentful + fallback mock data)
-- Order service (in-memory store for development)
+- Basket service (CommerceTools + fallback mock data)
+- Order service (CommerceTools + in-memory fallback)
+- Payment service (CommerceTools + fallback mock data)
 - Development mode toggle to avoid external dependencies
 
 ## Getting Started
@@ -51,9 +53,9 @@ By default, development mode is enabled when `NODE_ENV` is not `production`. You
 When development mode is enabled:
 - Algolia queries use local mock products
 - Contentful pages use local mock content
-- Orders are stored in memory
+- Baskets, orders, and payments use mock data
 
-Copy `.env.example` to `.env.local` and add credentials if you want to hit the real services.
+Copy `.env.example` to `.env.local` and add credentials if you want to hit the real services (Algolia, Contentful, CommerceTools).
 
 ## GraphQL API
 
@@ -88,6 +90,30 @@ mutation CreateOrder($input: CreateOrderInput!) {
 }
 ```
 
+Basket example:
+
+```graphql
+mutation CreateBasket($input: CreateBasketInput!) {
+  createBasket(input: $input) {
+    id
+    total
+    currency
+  }
+}
+```
+
+Payment example:
+
+```graphql
+mutation CreatePayment($input: CreatePaymentInput!) {
+  createPayment(input: $input) {
+    id
+    amount
+    status
+  }
+}
+```
+
 ## Environment Variables
 
-See `.env.example` for all supported keys.
+See `.env.example` for all supported keys, including CommerceTools credentials and endpoints.
